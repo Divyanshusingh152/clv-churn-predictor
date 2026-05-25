@@ -18,7 +18,7 @@ st.set_page_config(
 # ── LOAD & CLEAN DATA ────────────────────────────────
 @st.cache_data
 def load_data():
-   df = pd.read_csv("data/WA_Fn-UseC_-Telco-Customer-Churn.csv")
+    df = pd.read_csv("data/WA_Fn-UseC_-Telco-Customer-Churn.csv")
     df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
     df['TotalCharges'] = df['TotalCharges'].fillna(0)
     df['SeniorCitizen'] = df['SeniorCitizen'].map({0: 'No', 1: 'Yes'})
